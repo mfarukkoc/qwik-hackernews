@@ -1,8 +1,8 @@
-# Qwik Hacker News ⚡️
+# [Qwik Hacker News](https://qwik-hackernews.vercel.app/)
 
 Demo application that uses Qwik and QwikCity.
 
-You can view preview it here.
+You can view the live demo [here](https://qwik-hackernews.vercel.app/).
 
 ---
 
