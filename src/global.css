@@ -1,0 +1,52 @@
+/**
+ * WHAT IS THIS FILE?
+ *
+ * Globally applied styles. No matter which components are in the page or matching route,
+ * the styles in here will be applied to the Document, without any sort of CSS scoping.
+ *
+ */
+
+:root {
+  --qwik-dark-blue: #006ce9;
+  --qwik-light-blue: #18b6f6;
+  --qwik-light-purple: #ac7ff4;
+  --qwik-dark-purple: #713fc2;
+  --light-grey: #828282;
+  --navbar-height: 52px;
+  --pagination-height: 0px;
+  --border-radius: 4px;
+  --space-1: 2px;
+  --space-2: 4px;
+  --space-4: 8px;
+  --space-6: 12px;
+  --space-8: 16px;
+  --space-12: 24px;
+}
+
+* {
+  font-family: "Poppins", ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, sans-serif;
+}
+
+body {
+  background-color: white;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1 1;
+  padding-top: calc(var(--navbar-height) + var(--pagination-height));
+  max-width: 900px;
+  width: calc(100% - 24px);
+  margin: var(--space-8) var(--space-6);
+
+  align-self: center;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}

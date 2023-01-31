@@ -1,0 +1,96 @@
+.comment-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px 0;
+  padding: 0 0 0 var(--space-8);
+}
+
+.comment > .comment-list {
+  margin-left: var(--space-6);
+  border-left: 2px solid var(--qwik-light-blue);
+}
+
+.divider {
+  --divider-color: var(--qwik-light-blue);
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.divider.open {
+  margin-bottom: -24px;
+}
+
+.divider.collapsed::after {
+  content: "";
+  position: absolute;
+  display: block;
+  height: 2px;
+  background: var(--divider-color);
+  border-radius: var(--border-radius);
+  z-index: -1;
+  transition: background 0.3s;
+  right: 2px;
+  left: 0px;
+}
+
+.divider .collapse-text {
+  background: white;
+  margin-left: var(--space-6);
+  padding: var(--space-1);
+  font-size: 0.75em;
+}
+
+.comment a {
+  color: var(--light-grey);
+}
+
+.comment a:hover {
+  color: var(--qwik-dark-purple);
+}
+
+.collapse-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: var(--space-12);
+  height: var(--space-12);
+  padding: 0;
+  background: var(--divider-color);
+  color: white;
+  border: 2px solid var(--divider-color);
+  font-size: 18px;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  transition: background 0.3s, color 0.3s;
+}
+
+.collapse-button:hover {
+  background: white;
+  color: var(--divider-color);
+}
+
+.divider.collapsed {
+  --divider-color: var(--qwik-light-purple);
+}
+
+.comment > .meta {
+  font-size: 0.75em;
+  color: var(--light-grey);
+}
+
+.comment {
+  border-radius: var(--border-radius);
+  z-index: 2;
+}
+
+.comment .content {
+  overflow-wrap: break-word;
+  font-size: 0.9em;
+}
+
+.comment .content pre {
+  white-space: pre-wrap;
+}
