@@ -17,8 +17,8 @@ export default component$(({ category }: { category: StoryCategory }) => {
   const pageStore = useStore({
     page: parseInt(location.query.page || "1") || 1,
   });
-  const stories = useResource$<StoryType[]>(async (ctx) => {
-    ctx.track(() => pageStore.page);
+  const stories = useResource$<StoryType[]>(async ({ track }) => {
+    track(pageStore);
     const response = await fetchStoryList({
       category: category,
       page: pageStore.page,
@@ -27,7 +27,12 @@ export default component$(({ category }: { category: StoryCategory }) => {
   });
 
   useClientEffect$(({ track }) => {
-    track(() => pageStore.page);
+    track(() => location.query.page);
+    pageStore.page = parseInt(location.query.page || "1") || 1;
+  });
+
+  useClientEffect$(({ track }) => {
+    track(pageStore);
 
     const searchParams = new URLSearchParams(window.location.search);
     searchParams.set("page", pageStore.page.toString());
